@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +19,21 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        \App\Models\certificate::create([
+            'name' => "Isaac Boakye-Manu",
+            'email' => "isaac@gmail.com",
+            'type' => 'Attendance',
+            'unique_code' => 'OAHF/AT/2304001',
+            'hash' => sha1(rand()),
+        ]);
+
+        \App\Models\certificate::create([
+            'name' => "Michael Esson Asante",
+            'email' => "mike17gh@gmail.com",
+            'type' => 'Attendance',
+            'unique_code' => 'OAHF/AT/2304002',
+            'hash' => sha1(rand()),
+        ]);
     }
 }

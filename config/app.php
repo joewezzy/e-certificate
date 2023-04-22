@@ -18,6 +18,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'forum_name' => 'Oxygen Africa Health Forum',
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

@@ -1,0 +1,193 @@
+h1.name {
+    position: absolute;
+    top: 205px;
+    left: 320px;
+    bottom: 0;
+    font-family: 'Open-Sans', sans-serif;
+    color: #00003C;
+    font-size: 29px;
+}
+
+.cert-creds{
+    position: absolute;
+    top: 20px;
+    left: 620px;
+    bottom: 0;
+
+}
+
+.cert-creds p{
+    line-height: 17px;
+    font-family: 'Open-Sans', sans-serif;
+    font-weight: 500;
+    color: #00003C;
+    /* font-size: 29px; */
+
+}
+
+#page-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #9e9e9e;
+    -webkit-transition: left 500ms;
+    transition: left 500ms;
+    max-width: 100vw;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#page-inner {
+    margin: 20px 0;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+#cert-outlet {
+    background-color: white;
+    width: 842px;
+    height: 595.4px;
+    margin: auto;
+    position: relative;
+}
+
+.cert-creds {
+    position: absolute;
+    bottom: 89px;
+    font-size: 12.5px;
+    color: #91918c;
+    letter-spacing: 0px;
+    line-height: 0.5em;
+}
+
+.buttonDownload {
+    border: none;
+    box-shadow: 1px 1px 3px 1px #7d7c7c;
+
+    border-radius: 3px;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    padding: 10px 25px;
+    cursor: pointer;
+    background-color: #4cc713;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 0.9em;
+    text-align: center;
+    text-indent: 15px;
+}
+
+.buttonDownload:hover {
+    background-color: #333;
+    color: white;
+}
+
+.buttonDownload:before,
+.buttonDownload:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 52%;
+}
+
+/* Download box shape  */
+.buttonDownload:before {
+    width: 10px;
+    height: 2px;
+    border-style: solid;
+    border-width: 0 2px 2px;
+}
+
+/* Download arrow shape */
+.buttonDownload:after {
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    margin-top: -7px;
+
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: transparent;
+    border-top-color: inherit;
+
+    animation: downloadArrow 2s linear infinite;
+    animation-play-state: paused;
+}
+
+.buttonDownload:hover::before {
+    border-color: #4cc713;
+}
+
+.buttonDownload:hover::after {
+    border-top-color: #4cc713;
+    animation-play-state: running;
+}
+
+@media print {
+    * {
+        color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+@media print {
+
+    body,
+    html,
+    #page-container {
+        margin: 0;
+        width: 842px !important;
+        height: 595px !important;
+    }
+
+    @page {
+        margin: 0 !important;
+        size: 842px 595px !important;
+    }
+
+    header,
+    footer,
+    nav,
+    aside {
+        display: none !important;
+    }
+
+    #cert-outlet {
+        margin: 0;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #cert-outlet,
+    #cert-outlet * {
+        visibility: visible;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    #cert-outlet-wrp {
+        overflow: auto;
+    }
+
+    #page-inner {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+}

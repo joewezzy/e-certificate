@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('unique_code');
             $table->string('hash');
             $table->boolean('isActive')->default(1)->comment('0 - Inactive , 1 - Active');
-            $table->integer('link_click_count')->comment('The number of times link has been clicked.');
+            $table->integer('link_click_count')->nullable()->comment('The number of times link has been clicked.');
             $table->timestamps();
         });
     }
