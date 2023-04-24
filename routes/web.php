@@ -21,4 +21,7 @@ Route::get('/public/{hash}',[App\Http\Controllers\CertificateController::class, 
 
 Auth::routes();
 
+Route::any('/certificate', [App\Http\Controllers\CertificateController::class, 'create'])->name('certificate.add');
+Route::get('/certificate/send/{id}', [App\Http\Controllers\CertificateController::class, 'sendCertificate'])->name('certificate.send.email');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

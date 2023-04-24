@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\certificate::create([
             'name' => "Isaac Boakye-Manu",
-            'email' => "isaac@gmail.com",
+            'email' => "isaac.boakyemanu@gmail.com",
             'type' => 'Attendance',
             'unique_code' => 'OAHF/AT/2304001',
             'hash' => sha1(rand()),
@@ -33,6 +33,14 @@ class DatabaseSeeder extends Seeder
             'email' => "mike17gh@gmail.com",
             'type' => 'Attendance',
             'unique_code' => 'OAHF/AT/2304002',
+            'hash' => sha1(rand()),
+        ]);
+
+        \App\Models\certificate::create([
+            'name' => "Abdulsalam Mohammed Daaru",
+            'email' => "corporatehealthghana@gmail.com",
+            'type' => 'Attendance',
+            'unique_code' => 'OAHF/AT/2304003',
             'hash' => sha1(rand()),
         ]);
     }
