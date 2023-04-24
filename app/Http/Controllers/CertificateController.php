@@ -13,6 +13,14 @@ class CertificateController extends Controller
     public function view($hash){
 
         $details = certificate::where('hash',$hash)->first();
+        $f = $details->link_click_count;
+        $d = $details->link_click_count + 1;
+      
+
+        certificate::where('hash',$hash)->update([
+            'link_click_count' =>  $d
+        ]);
+
     return view('certificate.view.index', compact('details'));
     }
 
