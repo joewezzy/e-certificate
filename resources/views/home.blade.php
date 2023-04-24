@@ -53,9 +53,6 @@
                         <td>{{$certificate->isEmailSent}}</td>
                         <td>{{$certificate->link_click_count}}</td>
                         <td><a href="{{ route('certificate.send.email', $certificate->id) }}" type="button" class="btn btn-success" >Send Email</a>
-                            {{-- <form id="send-certificate" action="{{ route('certificate.send.email', $certificate->id) }}" method="POST" class="d-none">
-                                @csrf
-                            </form> --}}
                         </td>
                       </tr>
                     @empty

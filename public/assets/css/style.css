@@ -5,7 +5,7 @@ h1.name {
     bottom: 0;
     font-family: 'Open-Sans', sans-serif;
     color: #00003C;
-    font-size: 29px;
+    /* font-size: 25px; */
 }
 
 .cert-creds{
@@ -115,12 +115,10 @@ p {
     height: 0;
     margin-left: 3px;
     margin-top: -7px;
-
     border-style: solid;
     border-width: 4px 4px 0 4px;
     border-color: transparent;
     border-top-color: inherit;
-
     animation: downloadArrow 2s linear infinite;
     animation-play-state: paused;
 }
