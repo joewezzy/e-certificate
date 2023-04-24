@@ -13,9 +13,9 @@ class CertificateController extends Controller
     public function view($hash){
 
         $details = certificate::where('hash',$hash)->first();
-        $f = $details->link_click_count;
+
         $d = $details->link_click_count + 1;
-      
+
 
         certificate::where('hash',$hash)->update([
             'link_click_count' =>  $d
@@ -48,7 +48,6 @@ public function sendCertificate($id){
         'link' => url('/public',$cert->hash),
         'body' => 'This is for testing email using smtp.'
     ];
-// dd($cert);
    if(Mail::to($cert->email)->send(new CertificateEmail($mailData)))
     $cert->update([
         'isEmailSent' => $cert->isEmailSent + 1

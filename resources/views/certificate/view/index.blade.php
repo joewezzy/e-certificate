@@ -47,7 +47,8 @@
     <div id="page-container">
         <div id="page-inner">
         <div id="cert-outlet">
-            <img src="{{asset('assets/img/forum_cert_temp.png')}}" alt="">
+            @include('certificate.view.image')
+            <img src="" alt="">
             <h1 class="name">{{strToUpper($details->name)}}</h1>
             <div id="cert-creds" class="cert-creds abs left-indent">
                 <p>Date of Issue: 14 April 2023</p>
