@@ -42,18 +42,48 @@
    <meta name="og:type" content="website">
    <meta name="author" content="@oxygenhealthconnect">
 </head>
-<body>
+<body id="body">
 
     <div id="page-container">
         <div id="page-inner">
+            <div id="cert-outlet-wrp">
+                <div id="cert-outlet">
+                    <div id="cert-body" class="ff1">
+                        <p id="name" class="certname abs left-indent">{{strToUpper($details->name)}}</p>
+                        <div id="cert-creds" class="cert-creds abs">
+                            <p>Date of Issue: 14 April 2023</p>
+                            <p>Certificate ID: {{$details->unique_code}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dl">
+                <button id="toPdf" class="buttonDownload">Download PDF</button>
+                <button id="toPng" class="buttonDownload">Download PNG</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-container" style="display: none">
+        <div id="page-inner">
         <div id="cert-outlet">
+
+            <div id="cert-body" class="ff1">
+                <p id="name" class="certname abs left-indent">{{strToUpper($details->name)}}</p>
+
+                <div id="cert-creds" class="cert-creds abs left-indent">
+                    <p>Date of Issue: 14 April 2023</p>
+                <p>Certificate ID: {{$details->unique_code}}</p>
+                </div>
+            </div>
+{{--
             @include('certificate.view.image')
             <h1 class="name">{{strToUpper($details->name)}}</h1>
             <div id="cert-creds" class="cert-creds abs left-indent">
                 <p>Date of Issue: 14 April 2023</p>
                 <p>Certificate ID: {{$details->unique_code}}</p>
             </div>
-        </div>
+        </div> --}}
 
 
         <div id="dl">
@@ -67,7 +97,6 @@
 
     <script src="https://unpkg.com/dom-to-image-more@2.15.0/dist/dom-to-image-more.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <script type="text/javascript">
     let FILE_NAME = `{{config('app.forum_name')}} Certificate - {{$details->name}}`;
@@ -83,21 +112,21 @@
     document.getElementById("toPng").addEventListener("click", generatePNG);
     document.getElementById("toPdf").addEventListener("click", generatePDF);
 
-    function genPDF(){
-        var doc = new jsPDF("l", "pt", [widthInPT, heightInPT]);
+//     function genPDF(){
+//         var doc = new jsPDF("l", "pt", [widthInPT, heightInPT]);
 
 
-        var myImage = new Image();
-myImage.src = "{{asset('assets/img/forum_cert_temp.png')}}";
-myImage.onload = function(){
+//         var myImage = new Image();
+// myImage.src = "{{asset('assets/img/forum_cert_temp.png')}}";
+// myImage.onload = function(){
 
-    doc.setFontSize(40);
-doc.text(`{{$details->name}}`, 400, 10, 'center');
-doc.addImage(myImage , 'png', 15, 40, widthInPT, heightInPT);
- doc.save(`${FILE_NAME}.pdf`);
-};
+//     doc.setFontSize(40);
+// doc.text(`{{$details->name}}`, 400, 10, 'center');
+// doc.addImage(myImage , 'png', 15, 40, widthInPT, heightInPT);
+//  doc.save(`${FILE_NAME}.pdf`);
+// };
 
-    }
+    // }
     function generatePNG() {
         const node = document.getElementById("cert-outlet");
         var scale = 1;
