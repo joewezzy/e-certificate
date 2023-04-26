@@ -26,9 +26,15 @@ class CertificateController extends Controller
 
     public function create(Request $request){
 
-            // $unique_code = IdGenerator::generate(['table' => 'certificate', 'length' => 15, 'prefix' => 'OAHF/AT/'.date('ym')]);
+        $config = [
+            'table' => 'certificates',
+            'field' => 'unique_code',
+            'length' => 15,
+            'prefix' => 'OAHF/AT/'.date('ym'),
+            // 'reset_on_prefix_change' => true
+        ];
+        $unique_code = IdGenerator::generate($config);
 
-            $unique_code = "OAHF/AT/2304003";
             certificate::create([
                 'name' => ucwords($request->input('name')),
                 'email' => $request->input('email'),
