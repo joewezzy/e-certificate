@@ -23,5 +23,6 @@ Auth::routes();
 
 Route::any('/certificate', [App\Http\Controllers\CertificateController::class, 'create'])->name('certificate.add');
 Route::get('/certificate/send/{id}', [App\Http\Controllers\CertificateController::class, 'sendCertificate'])->name('certificate.send.email');
+Route::post('/certificate/import', [App\Http\Controllers\CertificateController::class, 'import_cert'])->name('certificate.import');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

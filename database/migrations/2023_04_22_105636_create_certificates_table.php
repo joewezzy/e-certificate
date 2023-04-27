@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('type');
+            $table->string('title')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('type')->nullable();
             $table->string('unique_code');
             $table->string('hash');
             $table->boolean('isActive')->default(1)->comment('0 - Inactive , 1 - Active');

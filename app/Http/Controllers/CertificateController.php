@@ -7,7 +7,10 @@ use App\Models\certificate;
 use Illuminate\Http\Request;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Support\Facades\Mail;
+use Alert;
 
+use App\Imports\CertImport;
+use Excel;
 class CertificateController extends Controller
 {
     public function view($hash){
@@ -61,4 +64,17 @@ public function sendCertificate($id){
 
     return redirect()->back();
 }
+
+
+
+public function import_cert(Request $request) 
+    {
+        $category = $request->category;
+        Excel::import(new CertImport($category), $request->file('file'));
+        Alert::success('Success', 'Import Completed');
+        
+        return redirect()->back();
+    }
+
+
 }
