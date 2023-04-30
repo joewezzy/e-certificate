@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{{config('app.forum_name')}} Certificate - {{$details->name}}</title>
+  <title>{{config('app.forum_name')}} Certificate - {{$details->title.' '.$details->name}}</title>
   <link rel="icon" href="{{asset("favicon.png")}}" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="152x152" href="{{asset("apple-touch-icon-152x152.png")}}">
   <link rel="apple-touch-icon" sizes="120x120" href="{{asset("apple-touch-icon-120x120.png")}}">
@@ -25,16 +25,16 @@
    <meta name="description"
        content="{{$description}}">
    <!-- Schema.org for Google -->
-   <meta itemprop="name" content="{{config('app.forum_name')}} Certificate - {{$details->name}}">
+   <meta itemprop="name" content="{{config('app.forum_name')}} Certificate - {{$details->title}} {{$details->name}}">
    <meta itemprop="description"
        content={{$description}}>
    <!-- Twitter -->
    <meta name="twitter:card" content="summary">
-   <meta name="twitter:title" content="{{config('app.forum_name')}} Certificate - {{$details->name}}">
+   <meta name="twitter:title" content="{{config('app.forum_name')}} Certificate - {{$details->title.' '.$details->name}}">
    <meta name="twitter:description"
        content="{{$description}}">
    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-   <meta name="og:title" content="{{config('app.forum_name')}} Certificate - {{$details->name}}">
+   <meta name="og:title" content="{{config('app.forum_name')}} Certificate - {{$details->title.' '.$details->name}}">
    <meta name="og:description"
        content="{{$description}}">
    <meta name="og:type" content="website">
@@ -332,7 +332,7 @@ body * {
             <div id="cert-outlet-wrp">
                 <div id="cert-outlet">
                     <div id="cert-body" class="ff1">
-                        <p id="name" class="certname abs left-indent">{{strToUpper($details->name)}}</p>
+                        <p id="name" class="certname abs left-indent">{{strToUpper($details->title.' '.$details->name)}}</p>
                         <div id="cert-creds" class="cert-creds abs">
                             <p>Date of Issue: 14 April 2023</p>
                             <p>Certificate ID: {{$details->unique_code}}</p>
@@ -358,8 +358,6 @@ body * {
     var CERT_WIDTH = 842;
     var CERT_HEIGHT = 595.4;
 
-    // var CERT_WIDTH = 880;
-    //     var CERT_HEIGHT = 622.4;
 
     var widthInPT = (CERT_WIDTH / 96) * 72;
     var heightInPT = (CERT_HEIGHT / 96) * 72;

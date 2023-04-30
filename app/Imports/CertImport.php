@@ -17,7 +17,7 @@ class CertImport implements ToCollection, WithStartRow, WithHeadingRow
     public function __construct($category)
     {
         $this->category = $category;
-        
+
     }
 
     public function startRow(): int
@@ -27,7 +27,7 @@ class CertImport implements ToCollection, WithStartRow, WithHeadingRow
 
     public function collection(Collection $rows)
     {
-        foreach ($rows as $row) 
+        foreach ($rows as $row)
         {
             $config = [
                 'table' => 'certificates',
@@ -38,8 +38,9 @@ class CertImport implements ToCollection, WithStartRow, WithHeadingRow
             ];
             $unique_code = IdGenerator::generate($config);
 
-            
-            Certificate::create([
+
+
+           \App\Models\certificate::create([
                 'title' => $row['title'],
                 'name' => ucwords($row['name']),
                 'email' => $row['email'],
