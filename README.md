@@ -39,9 +39,9 @@ Follow these steps to set up the Electronic Certificate Management System for yo
 
 Before you begin, ensure you have the following installed:
 
-- PHP >= 7.4
+- PHP >= 8.0
 - Composer - [Installation Guide](https://getcomposer.org/doc/00-intro.md)
-- Laravel CLI - [Installation Guide](https://laravel.com/docs/8.x/installation)
+- Laravel CLI - [Installation Guide](https://laravel.com/docs/10.8/installation)
 - MySQL or another compatible database system
 
 ### Installation
@@ -49,13 +49,13 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/electronic-certificates-for-events.git
+git clone https://github.com/Oxygyen-Health/e-certificate.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd electronic-certificates-for-events
+cd e-certificate
 ```
 
 3. Install dependencies:
@@ -123,4 +123,4 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use and 
 
 ---
 
-For any questions or support, please contact [your-email@example.com](mailto:oxygenhealthtechnologies@gmail.com).
+For any questions or support, please contact [oxygenhealthtechnologies@gmail.com](mailto:oxygenhealthtechnologies@gmail.com).
