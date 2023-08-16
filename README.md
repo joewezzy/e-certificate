@@ -41,7 +41,7 @@ Before you begin, ensure you have the following installed:
 
 - PHP >= 8.0
 - Composer - [Installation Guide](https://getcomposer.org/doc/00-intro.md)
-- Laravel CLI - [Installation Guide](https://laravel.com/docs/10.8/installation)
+- Laravel CLI - [Installation Guide](https://laravel.com/docs/10.x/installation)
 - MySQL or another compatible database system
 
 ### Installation
