@@ -49,7 +49,7 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Oxygyen-Health/e-certificate.git
+git clone https://github.com/joewezzy/e-certificate.git
 ```
 
 2. Navigate to the project directory:
@@ -122,5 +122,3 @@ Contributions to this project are welcome. To contribute, follow the steps outli
 This project is licensed under the [MIT License](LICENSE). Feel free to use and modify the codebase according to your company's needs.
 
 ---
-
-For any questions or support, please contact [oxygenhealthtechnologies@gmail.com](mailto:oxygenhealthtechnologies@gmail.com).
